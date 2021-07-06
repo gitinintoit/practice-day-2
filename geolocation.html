@@ -20,9 +20,18 @@
             }
         }
         function showPosition(position) {
-            x.innerHTML="Latitude: " + position.coords.latitude;
-            x.innerHTML+="<br/>"
-            x.innerHTML+="<br>Longitude: " + position.coords.longitude;
+                var locAPI= "https://maps.googleapis.com/maps/api/geocode/json?latlng"+position.coords.latitude+","+position.coords.longitude;
+                x.innerHTML=locAPI;
+                $.get(){
+
+                        URL : function(data){
+                        console.log(data);
+                        x.innerHTML=data.results[0].address_components[4].long_name+",";
+                        x.innerHTML+=data.results[0].address_components[5].long_name+",";
+                        x.innerHTML+=data.results[0].address_components[6].long_name+",";
+                    };
+                };
+               
         }
     </script>
     
